@@ -1,7 +1,8 @@
-module github.com/GIT_USER_ID/GIT_REPO_ID
+module github.com/roman-rk/spoonacular_golang_api
 
 go 1.13
 
 require (
-	golang.org/x/oauth2 v0.0.0-20210323180902-22b0adad7558
+	golang.org/x/net v0.15.0 // indirect
+	golang.org/x/oauth2 v0.12.0
 )
