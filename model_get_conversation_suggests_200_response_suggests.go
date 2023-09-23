@@ -24,9 +24,8 @@ type GetConversationSuggests200ResponseSuggests struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGetConversationSuggests200ResponseSuggests( []GetConversationSuggests200ResponseSuggestsInner) *GetConversationSuggests200ResponseSuggests {
+func NewGetConversationSuggests200ResponseSuggests(o []GetConversationSuggests200ResponseSuggestsInner) *GetConversationSuggests200ResponseSuggests {
 	this := GetConversationSuggests200ResponseSuggests{}
-	this._ = 
 	return &this
 }
 
@@ -38,25 +37,6 @@ func NewGetConversationSuggests200ResponseSuggestsWithDefaults() *GetConversatio
 	return &this
 }
 
-// Get_ returns the _ field value
-func (o *GetConversationSuggests200ResponseSuggests) Get_() []GetConversationSuggests200ResponseSuggestsInner {
-	if o == nil {
-		var ret []GetConversationSuggests200ResponseSuggestsInner
-		return ret
-	}
-
-	return o._
-}
-
-// Get_Ok returns a tuple with the _ field value
-// and a boolean to check if the value has been set.
-func (o *GetConversationSuggests200ResponseSuggests) Get_Ok() ([]GetConversationSuggests200ResponseSuggestsInner, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o._, true
-}
-
 // Set_ sets field value
 func (o *GetConversationSuggests200ResponseSuggests) Set_(v []GetConversationSuggests200ResponseSuggestsInner) {
 	o._ = v
@@ -64,9 +44,6 @@ func (o *GetConversationSuggests200ResponseSuggests) Set_(v []GetConversationSug
 
 func (o GetConversationSuggests200ResponseSuggests) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["_"] = o._
-	}
 	return json.Marshal(toSerialize)
 }
 
@@ -105,5 +82,3 @@ func (v *NullableGetConversationSuggests200ResponseSuggests) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-
