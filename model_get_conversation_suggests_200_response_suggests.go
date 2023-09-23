@@ -17,7 +17,7 @@ import (
 
 // GetConversationSuggests200ResponseSuggests struct for GetConversationSuggests200ResponseSuggests
 type GetConversationSuggests200ResponseSuggests struct {
-	_ []GetConversationSuggests200ResponseSuggestsInner `json:"_"`
+	Inner []GetConversationSuggests200ResponseSuggestsInner `json:"_"`
 }
 
 // NewGetConversationSuggests200ResponseSuggests instantiates a new GetConversationSuggests200ResponseSuggests object
@@ -26,6 +26,7 @@ type GetConversationSuggests200ResponseSuggests struct {
 // will change when the set of required properties is changed
 func NewGetConversationSuggests200ResponseSuggests(o []GetConversationSuggests200ResponseSuggestsInner) *GetConversationSuggests200ResponseSuggests {
 	this := GetConversationSuggests200ResponseSuggests{}
+	this.Inner = o
 	return &this
 }
 
@@ -37,13 +38,35 @@ func NewGetConversationSuggests200ResponseSuggestsWithDefaults() *GetConversatio
 	return &this
 }
 
+// Get_ returns the _ field value
+func (o *GetConversationSuggests200ResponseSuggests) Get_() []GetConversationSuggests200ResponseSuggestsInner {
+	if o == nil {
+		var ret []GetConversationSuggests200ResponseSuggestsInner
+		return ret
+	}
+
+	return o.Inner
+}
+
+// Get_Ok returns a tuple with the _ field value
+// and a boolean to check if the value has been set.
+func (o *GetConversationSuggests200ResponseSuggests) Get_Ok() ([]GetConversationSuggests200ResponseSuggestsInner, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Inner, true
+}
+
 // Set_ sets field value
 func (o *GetConversationSuggests200ResponseSuggests) Set_(v []GetConversationSuggests200ResponseSuggestsInner) {
-	o._ = v
+	o.Inner = v
 }
 
 func (o GetConversationSuggests200ResponseSuggests) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["_"] = o.Inner
+	}
 	return json.Marshal(toSerialize)
 }
 
