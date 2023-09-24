@@ -20,14 +20,13 @@ import (
 	"strings"
 )
 
-
 // RecipesApiService RecipesApi service
 type RecipesApiService service
 
 type ApiAnalyzeARecipeSearchQueryRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *RecipesApiService
-	q *string
+	q          *string
 }
 
 // The recipe search query.
@@ -45,24 +44,25 @@ AnalyzeARecipeSearchQuery Analyze a Recipe Search Query
 
 Parse a recipe search query to find out its intention.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAnalyzeARecipeSearchQueryRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAnalyzeARecipeSearchQueryRequest
 */
 func (a *RecipesApiService) AnalyzeARecipeSearchQuery(ctx context.Context) ApiAnalyzeARecipeSearchQueryRequest {
 	return ApiAnalyzeARecipeSearchQueryRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AnalyzeARecipeSearchQuery200Response
+//
+//	@return AnalyzeARecipeSearchQuery200Response
 func (a *RecipesApiService) AnalyzeARecipeSearchQueryExecute(r ApiAnalyzeARecipeSearchQueryRequest) (*AnalyzeARecipeSearchQuery200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AnalyzeARecipeSearchQuery200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AnalyzeARecipeSearchQuery200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecipesApiService.AnalyzeARecipeSearchQuery")
@@ -149,8 +149,8 @@ func (a *RecipesApiService) AnalyzeARecipeSearchQueryExecute(r ApiAnalyzeARecipe
 }
 
 type ApiAnalyzeRecipeInstructionsRequest struct {
-	ctx context.Context
-	ApiService *RecipesApiService
+	ctx         context.Context
+	ApiService  *RecipesApiService
 	contentType *string
 }
 
@@ -169,24 +169,25 @@ AnalyzeRecipeInstructions Analyze Recipe Instructions
 
 This endpoint allows you to break down instructions into atomic steps. Furthermore, each step will contain the ingredients and equipment required. Additionally, all ingredients and equipment from the recipe's instructions will be extracted independently of the step they're used in.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAnalyzeRecipeInstructionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAnalyzeRecipeInstructionsRequest
 */
 func (a *RecipesApiService) AnalyzeRecipeInstructions(ctx context.Context) ApiAnalyzeRecipeInstructionsRequest {
 	return ApiAnalyzeRecipeInstructionsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AnalyzeRecipeInstructions200Response
+//
+//	@return AnalyzeRecipeInstructions200Response
 func (a *RecipesApiService) AnalyzeRecipeInstructionsExecute(r ApiAnalyzeRecipeInstructionsRequest) (*AnalyzeRecipeInstructions200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AnalyzeRecipeInstructions200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AnalyzeRecipeInstructions200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecipesApiService.AnalyzeRecipeInstructions")
@@ -272,10 +273,10 @@ func (a *RecipesApiService) AnalyzeRecipeInstructionsExecute(r ApiAnalyzeRecipeI
 }
 
 type ApiAutocompleteRecipeSearchRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *RecipesApiService
-	query *string
-	number *int32
+	query      *string
+	number     *int32
 }
 
 // The (natural language) search query.
@@ -299,24 +300,25 @@ AutocompleteRecipeSearch Autocomplete Recipe Search
 
 Autocomplete a partial input to suggest possible recipe names.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAutocompleteRecipeSearchRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAutocompleteRecipeSearchRequest
 */
 func (a *RecipesApiService) AutocompleteRecipeSearch(ctx context.Context) ApiAutocompleteRecipeSearchRequest {
 	return ApiAutocompleteRecipeSearchRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []AutocompleteRecipeSearch200ResponseInner
+//
+//	@return []AutocompleteRecipeSearch200ResponseInner
 func (a *RecipesApiService) AutocompleteRecipeSearchExecute(r ApiAutocompleteRecipeSearchRequest) ([]AutocompleteRecipeSearch200ResponseInner, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []AutocompleteRecipeSearch200ResponseInner
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []AutocompleteRecipeSearch200ResponseInner
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecipesApiService.AutocompleteRecipeSearch")
@@ -405,8 +407,8 @@ func (a *RecipesApiService) AutocompleteRecipeSearchExecute(r ApiAutocompleteRec
 }
 
 type ApiClassifyCuisineRequest struct {
-	ctx context.Context
-	ApiService *RecipesApiService
+	ctx         context.Context
+	ApiService  *RecipesApiService
 	contentType *string
 }
 
@@ -425,24 +427,25 @@ ClassifyCuisine Classify Cuisine
 
 Classify the recipe's cuisine.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiClassifyCuisineRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiClassifyCuisineRequest
 */
 func (a *RecipesApiService) ClassifyCuisine(ctx context.Context) ApiClassifyCuisineRequest {
 	return ApiClassifyCuisineRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ClassifyCuisine200Response
+//
+//	@return ClassifyCuisine200Response
 func (a *RecipesApiService) ClassifyCuisineExecute(r ApiClassifyCuisineRequest) (*ClassifyCuisine200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ClassifyCuisine200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ClassifyCuisine200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecipesApiService.ClassifyCuisine")
@@ -528,10 +531,10 @@ func (a *RecipesApiService) ClassifyCuisineExecute(r ApiClassifyCuisineRequest) 
 }
 
 type ApiComputeGlycemicLoadRequest struct {
-	ctx context.Context
-	ApiService *RecipesApiService
+	ctx                        context.Context
+	ApiService                 *RecipesApiService
 	computeGlycemicLoadRequest *ComputeGlycemicLoadRequest
-	language *string
+	language                   *string
 }
 
 func (r ApiComputeGlycemicLoadRequest) ComputeGlycemicLoadRequest(computeGlycemicLoadRequest ComputeGlycemicLoadRequest) ApiComputeGlycemicLoadRequest {
@@ -554,24 +557,25 @@ ComputeGlycemicLoad Compute Glycemic Load
 
 Retrieve the glycemic index for a list of ingredients and compute the individual and total glycemic load.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiComputeGlycemicLoadRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiComputeGlycemicLoadRequest
 */
 func (a *RecipesApiService) ComputeGlycemicLoad(ctx context.Context) ApiComputeGlycemicLoadRequest {
 	return ApiComputeGlycemicLoadRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ComputeGlycemicLoad200Response
+//
+//	@return ComputeGlycemicLoad200Response
 func (a *RecipesApiService) ComputeGlycemicLoadExecute(r ApiComputeGlycemicLoadRequest) (*ComputeGlycemicLoad200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ComputeGlycemicLoad200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ComputeGlycemicLoad200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecipesApiService.ComputeGlycemicLoad")
@@ -662,12 +666,12 @@ func (a *RecipesApiService) ComputeGlycemicLoadExecute(r ApiComputeGlycemicLoadR
 }
 
 type ApiConvertAmountsRequest struct {
-	ctx context.Context
-	ApiService *RecipesApiService
+	ctx            context.Context
+	ApiService     *RecipesApiService
 	ingredientName *string
-	sourceAmount *float32
-	sourceUnit *string
-	targetUnit *string
+	sourceAmount   *float32
+	sourceUnit     *string
+	targetUnit     *string
 }
 
 // The ingredient which you want to convert.
@@ -703,24 +707,25 @@ ConvertAmounts Convert Amounts
 
 Convert amounts like "2 cups of flour to grams".
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiConvertAmountsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiConvertAmountsRequest
 */
 func (a *RecipesApiService) ConvertAmounts(ctx context.Context) ApiConvertAmountsRequest {
 	return ApiConvertAmountsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ConvertAmounts200Response
+//
+//	@return ConvertAmounts200Response
 func (a *RecipesApiService) ConvertAmountsExecute(r ApiConvertAmountsRequest) (*ConvertAmounts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ConvertAmounts200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConvertAmounts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecipesApiService.ConvertAmounts")
@@ -819,8 +824,8 @@ func (a *RecipesApiService) ConvertAmountsExecute(r ApiConvertAmountsRequest) (*
 }
 
 type ApiCreateRecipeCardRequest struct {
-	ctx context.Context
-	ApiService *RecipesApiService
+	ctx         context.Context
+	ApiService  *RecipesApiService
 	contentType *string
 }
 
@@ -839,24 +844,25 @@ CreateRecipeCard Create Recipe Card
 
 Generate a recipe card for a recipe.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateRecipeCardRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateRecipeCardRequest
 */
 func (a *RecipesApiService) CreateRecipeCard(ctx context.Context) ApiCreateRecipeCardRequest {
 	return ApiCreateRecipeCardRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return CreateRecipeCard200Response
+//
+//	@return CreateRecipeCard200Response
 func (a *RecipesApiService) CreateRecipeCardExecute(r ApiCreateRecipeCardRequest) (*CreateRecipeCard200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CreateRecipeCard200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CreateRecipeCard200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecipesApiService.CreateRecipeCard")
@@ -942,9 +948,9 @@ func (a *RecipesApiService) CreateRecipeCardExecute(r ApiCreateRecipeCardRequest
 }
 
 type ApiEquipmentByIDImageRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *RecipesApiService
-	id float32
+	id         float32
 }
 
 func (r ApiEquipmentByIDImageRequest) Execute() (map[string]interface{}, *http.Response, error) {
@@ -956,26 +962,27 @@ EquipmentByIDImage Equipment by ID Image
 
 Visualize a recipe's equipment list as an image.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id The recipe id.
- @return ApiEquipmentByIDImageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id The recipe id.
+	@return ApiEquipmentByIDImageRequest
 */
 func (a *RecipesApiService) EquipmentByIDImage(ctx context.Context, id float32) ApiEquipmentByIDImageRequest {
 	return ApiEquipmentByIDImageRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *RecipesApiService) EquipmentByIDImageExecute(r ApiEquipmentByIDImageRequest) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecipesApiService.EquipmentByIDImage")
@@ -1059,13 +1066,13 @@ func (a *RecipesApiService) EquipmentByIDImageExecute(r ApiEquipmentByIDImageReq
 }
 
 type ApiExtractRecipeFromWebsiteRequest struct {
-	ctx context.Context
-	ApiService *RecipesApiService
-	url *string
-	forceExtraction *bool
-	analyze *bool
+	ctx              context.Context
+	ApiService       *RecipesApiService
+	url              *string
+	forceExtraction  *bool
+	analyze          *bool
 	includeNutrition *bool
-	includeTaste *bool
+	includeTaste     *bool
 }
 
 // The URL of the recipe page.
@@ -1107,24 +1114,25 @@ ExtractRecipeFromWebsite Extract Recipe from Website
 
 This endpoint lets you extract recipe data such as title, ingredients, and instructions from any properly formatted Website.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtractRecipeFromWebsiteRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtractRecipeFromWebsiteRequest
 */
 func (a *RecipesApiService) ExtractRecipeFromWebsite(ctx context.Context) ApiExtractRecipeFromWebsiteRequest {
 	return ApiExtractRecipeFromWebsiteRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GetRecipeInformation200Response
+//
+//	@return GetRecipeInformation200Response
 func (a *RecipesApiService) ExtractRecipeFromWebsiteExecute(r ApiExtractRecipeFromWebsiteRequest) (*GetRecipeInformation200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetRecipeInformation200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetRecipeInformation200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecipesApiService.ExtractRecipeFromWebsite")
@@ -1223,9 +1231,9 @@ func (a *RecipesApiService) ExtractRecipeFromWebsiteExecute(r ApiExtractRecipeFr
 }
 
 type ApiGetAnalyzedRecipeInstructionsRequest struct {
-	ctx context.Context
-	ApiService *RecipesApiService
-	id int32
+	ctx           context.Context
+	ApiService    *RecipesApiService
+	id            int32
 	stepBreakdown *bool
 }
 
@@ -1244,26 +1252,27 @@ GetAnalyzedRecipeInstructions Get Analyzed Recipe Instructions
 
 Get an analyzed breakdown of a recipe's instructions. Each step is enriched with the ingredients and equipment required.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id The item's id.
- @return ApiGetAnalyzedRecipeInstructionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id The item's id.
+	@return ApiGetAnalyzedRecipeInstructionsRequest
 */
 func (a *RecipesApiService) GetAnalyzedRecipeInstructions(ctx context.Context, id int32) ApiGetAnalyzedRecipeInstructionsRequest {
 	return ApiGetAnalyzedRecipeInstructionsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetAnalyzedRecipeInstructions200Response
+//
+//	@return GetAnalyzedRecipeInstructions200Response
 func (a *RecipesApiService) GetAnalyzedRecipeInstructionsExecute(r ApiGetAnalyzedRecipeInstructionsRequest) (*GetAnalyzedRecipeInstructions200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetAnalyzedRecipeInstructions200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetAnalyzedRecipeInstructions200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecipesApiService.GetAnalyzedRecipeInstructions")
@@ -1350,11 +1359,11 @@ func (a *RecipesApiService) GetAnalyzedRecipeInstructionsExecute(r ApiGetAnalyze
 }
 
 type ApiGetRandomRecipesRequest struct {
-	ctx context.Context
-	ApiService *RecipesApiService
+	ctx          context.Context
+	ApiService   *RecipesApiService
 	limitLicense *bool
-	tags *string
-	number *int32
+	tags         *string
+	number       *int32
 }
 
 // Whether the recipes should have an open license that allows display with proper attribution.
@@ -1384,24 +1393,25 @@ GetRandomRecipes Get Random Recipes
 
 Find random (popular) recipes. If you need to filter recipes by diet, nutrition etc. you might want to consider using the complex recipe search endpoint and set the sort request parameter to random.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetRandomRecipesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetRandomRecipesRequest
 */
 func (a *RecipesApiService) GetRandomRecipes(ctx context.Context) ApiGetRandomRecipesRequest {
 	return ApiGetRandomRecipesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GetRandomRecipes200Response
+//
+//	@return GetRandomRecipes200Response
 func (a *RecipesApiService) GetRandomRecipesExecute(r ApiGetRandomRecipesRequest) (*GetRandomRecipes200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetRandomRecipes200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetRandomRecipes200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecipesApiService.GetRandomRecipes")
@@ -1493,9 +1503,9 @@ func (a *RecipesApiService) GetRandomRecipesExecute(r ApiGetRandomRecipesRequest
 }
 
 type ApiGetRecipeEquipmentByIDRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *RecipesApiService
-	id int32
+	id         int32
 }
 
 func (r ApiGetRecipeEquipmentByIDRequest) Execute() (*GetRecipeEquipmentByID200Response, *http.Response, error) {
@@ -1507,26 +1517,27 @@ GetRecipeEquipmentByID Equipment by ID
 
 Get a recipe's equipment list.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id The item's id.
- @return ApiGetRecipeEquipmentByIDRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id The item's id.
+	@return ApiGetRecipeEquipmentByIDRequest
 */
 func (a *RecipesApiService) GetRecipeEquipmentByID(ctx context.Context, id int32) ApiGetRecipeEquipmentByIDRequest {
 	return ApiGetRecipeEquipmentByIDRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetRecipeEquipmentByID200Response
+//
+//	@return GetRecipeEquipmentByID200Response
 func (a *RecipesApiService) GetRecipeEquipmentByIDExecute(r ApiGetRecipeEquipmentByIDRequest) (*GetRecipeEquipmentByID200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetRecipeEquipmentByID200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetRecipeEquipmentByID200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecipesApiService.GetRecipeEquipmentByID")
@@ -1610,9 +1621,9 @@ func (a *RecipesApiService) GetRecipeEquipmentByIDExecute(r ApiGetRecipeEquipmen
 }
 
 type ApiGetRecipeInformationRequest struct {
-	ctx context.Context
-	ApiService *RecipesApiService
-	id int32
+	ctx              context.Context
+	ApiService       *RecipesApiService
+	id               int32
 	includeNutrition *bool
 }
 
@@ -1631,26 +1642,27 @@ GetRecipeInformation Get Recipe Information
 
 Use a recipe id to get full information about a recipe, such as ingredients, nutrition, diet and allergen information, etc.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id The item's id.
- @return ApiGetRecipeInformationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id The item's id.
+	@return ApiGetRecipeInformationRequest
 */
 func (a *RecipesApiService) GetRecipeInformation(ctx context.Context, id int32) ApiGetRecipeInformationRequest {
 	return ApiGetRecipeInformationRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetRecipeInformation200Response
+//
+//	@return GetRecipeInformation200Response
 func (a *RecipesApiService) GetRecipeInformationExecute(r ApiGetRecipeInformationRequest) (*GetRecipeInformation200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetRecipeInformation200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetRecipeInformation200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecipesApiService.GetRecipeInformation")
@@ -1737,9 +1749,9 @@ func (a *RecipesApiService) GetRecipeInformationExecute(r ApiGetRecipeInformatio
 }
 
 type ApiGetRecipeInformationBulkRequest struct {
-	ctx context.Context
-	ApiService *RecipesApiService
-	ids *string
+	ctx              context.Context
+	ApiService       *RecipesApiService
+	ids              *string
 	includeNutrition *bool
 }
 
@@ -1764,24 +1776,25 @@ GetRecipeInformationBulk Get Recipe Information Bulk
 
 Get information about multiple recipes at once. This is equivalent to calling the Get Recipe Information endpoint multiple times, but faster.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetRecipeInformationBulkRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetRecipeInformationBulkRequest
 */
 func (a *RecipesApiService) GetRecipeInformationBulk(ctx context.Context) ApiGetRecipeInformationBulkRequest {
 	return ApiGetRecipeInformationBulkRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []GetRecipeInformationBulk200ResponseInner
+//
+//	@return []GetRecipeInformationBulk200ResponseInner
 func (a *RecipesApiService) GetRecipeInformationBulkExecute(r ApiGetRecipeInformationBulkRequest) ([]GetRecipeInformationBulk200ResponseInner, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []GetRecipeInformationBulk200ResponseInner
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []GetRecipeInformationBulk200ResponseInner
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecipesApiService.GetRecipeInformationBulk")
@@ -1858,22 +1871,23 @@ func (a *RecipesApiService) GetRecipeInformationBulkExecute(r ApiGetRecipeInform
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
+	/*
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr := &GenericOpenAPIError{
+				body:  localVarBody,
+				error: err.Error(),
+			}
+			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
+	*/
+	return nil, localVarHTTPResponse, nil
 }
 
 type ApiGetRecipeIngredientsByIDRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *RecipesApiService
-	id int32
+	id         int32
 }
 
 func (r ApiGetRecipeIngredientsByIDRequest) Execute() (*GetRecipeIngredientsByID200Response, *http.Response, error) {
@@ -1885,26 +1899,27 @@ GetRecipeIngredientsByID Ingredients by ID
 
 Get a recipe's ingredient list.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id The item's id.
- @return ApiGetRecipeIngredientsByIDRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id The item's id.
+	@return ApiGetRecipeIngredientsByIDRequest
 */
 func (a *RecipesApiService) GetRecipeIngredientsByID(ctx context.Context, id int32) ApiGetRecipeIngredientsByIDRequest {
 	return ApiGetRecipeIngredientsByIDRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetRecipeIngredientsByID200Response
+//
+//	@return GetRecipeIngredientsByID200Response
 func (a *RecipesApiService) GetRecipeIngredientsByIDExecute(r ApiGetRecipeIngredientsByIDRequest) (*GetRecipeIngredientsByID200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetRecipeIngredientsByID200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetRecipeIngredientsByID200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecipesApiService.GetRecipeIngredientsByID")
@@ -1988,9 +2003,9 @@ func (a *RecipesApiService) GetRecipeIngredientsByIDExecute(r ApiGetRecipeIngred
 }
 
 type ApiGetRecipeNutritionWidgetByIDRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *RecipesApiService
-	id int32
+	id         int32
 }
 
 func (r ApiGetRecipeNutritionWidgetByIDRequest) Execute() (*GetRecipeNutritionWidgetByID200Response, *http.Response, error) {
@@ -2002,26 +2017,27 @@ GetRecipeNutritionWidgetByID Nutrition by ID
 
 Get a recipe's nutrition data.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id The item's id.
- @return ApiGetRecipeNutritionWidgetByIDRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id The item's id.
+	@return ApiGetRecipeNutritionWidgetByIDRequest
 */
 func (a *RecipesApiService) GetRecipeNutritionWidgetByID(ctx context.Context, id int32) ApiGetRecipeNutritionWidgetByIDRequest {
 	return ApiGetRecipeNutritionWidgetByIDRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetRecipeNutritionWidgetByID200Response
+//
+//	@return GetRecipeNutritionWidgetByID200Response
 func (a *RecipesApiService) GetRecipeNutritionWidgetByIDExecute(r ApiGetRecipeNutritionWidgetByIDRequest) (*GetRecipeNutritionWidgetByID200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetRecipeNutritionWidgetByID200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetRecipeNutritionWidgetByID200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecipesApiService.GetRecipeNutritionWidgetByID")
@@ -2105,9 +2121,9 @@ func (a *RecipesApiService) GetRecipeNutritionWidgetByIDExecute(r ApiGetRecipeNu
 }
 
 type ApiGetRecipePriceBreakdownByIDRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *RecipesApiService
-	id int32
+	id         int32
 }
 
 func (r ApiGetRecipePriceBreakdownByIDRequest) Execute() (*GetRecipePriceBreakdownByID200Response, *http.Response, error) {
@@ -2119,26 +2135,27 @@ GetRecipePriceBreakdownByID Price Breakdown by ID
 
 Get a recipe's price breakdown data.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id The item's id.
- @return ApiGetRecipePriceBreakdownByIDRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id The item's id.
+	@return ApiGetRecipePriceBreakdownByIDRequest
 */
 func (a *RecipesApiService) GetRecipePriceBreakdownByID(ctx context.Context, id int32) ApiGetRecipePriceBreakdownByIDRequest {
 	return ApiGetRecipePriceBreakdownByIDRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetRecipePriceBreakdownByID200Response
+//
+//	@return GetRecipePriceBreakdownByID200Response
 func (a *RecipesApiService) GetRecipePriceBreakdownByIDExecute(r ApiGetRecipePriceBreakdownByIDRequest) (*GetRecipePriceBreakdownByID200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetRecipePriceBreakdownByID200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetRecipePriceBreakdownByID200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecipesApiService.GetRecipePriceBreakdownByID")
@@ -2222,10 +2239,10 @@ func (a *RecipesApiService) GetRecipePriceBreakdownByIDExecute(r ApiGetRecipePri
 }
 
 type ApiGetRecipeTasteByIDRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *RecipesApiService
-	id int32
-	normalize *bool
+	id         int32
+	normalize  *bool
 }
 
 // Normalize to the strongest taste.
@@ -2243,26 +2260,27 @@ GetRecipeTasteByID Taste by ID
 
 Get a recipe's taste. The tastes supported are sweet, salty, sour, bitter, savory, and fatty.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id The item's id.
- @return ApiGetRecipeTasteByIDRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id The item's id.
+	@return ApiGetRecipeTasteByIDRequest
 */
 func (a *RecipesApiService) GetRecipeTasteByID(ctx context.Context, id int32) ApiGetRecipeTasteByIDRequest {
 	return ApiGetRecipeTasteByIDRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetRecipeTasteByID200Response
+//
+//	@return GetRecipeTasteByID200Response
 func (a *RecipesApiService) GetRecipeTasteByIDExecute(r ApiGetRecipeTasteByIDRequest) (*GetRecipeTasteByID200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetRecipeTasteByID200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetRecipeTasteByID200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecipesApiService.GetRecipeTasteByID")
@@ -2349,10 +2367,10 @@ func (a *RecipesApiService) GetRecipeTasteByIDExecute(r ApiGetRecipeTasteByIDReq
 }
 
 type ApiGetSimilarRecipesRequest struct {
-	ctx context.Context
-	ApiService *RecipesApiService
-	id int32
-	number *int32
+	ctx          context.Context
+	ApiService   *RecipesApiService
+	id           int32
+	number       *int32
 	limitLicense *bool
 }
 
@@ -2377,26 +2395,27 @@ GetSimilarRecipes Get Similar Recipes
 
 Find recipes which are similar to the given one.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id The item's id.
- @return ApiGetSimilarRecipesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id The item's id.
+	@return ApiGetSimilarRecipesRequest
 */
 func (a *RecipesApiService) GetSimilarRecipes(ctx context.Context, id int32) ApiGetSimilarRecipesRequest {
 	return ApiGetSimilarRecipesRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return []GetSimilarRecipes200ResponseInner
+//
+//	@return []GetSimilarRecipes200ResponseInner
 func (a *RecipesApiService) GetSimilarRecipesExecute(r ApiGetSimilarRecipesRequest) ([]GetSimilarRecipes200ResponseInner, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []GetSimilarRecipes200ResponseInner
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []GetSimilarRecipes200ResponseInner
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecipesApiService.GetSimilarRecipes")
@@ -2486,9 +2505,9 @@ func (a *RecipesApiService) GetSimilarRecipesExecute(r ApiGetSimilarRecipesReque
 }
 
 type ApiGuessNutritionByDishNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *RecipesApiService
-	title *string
+	title      *string
 }
 
 // The title of the dish.
@@ -2506,24 +2525,25 @@ GuessNutritionByDishName Guess Nutrition by Dish Name
 
 Estimate the macronutrients of a dish based on its title.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGuessNutritionByDishNameRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGuessNutritionByDishNameRequest
 */
 func (a *RecipesApiService) GuessNutritionByDishName(ctx context.Context) ApiGuessNutritionByDishNameRequest {
 	return ApiGuessNutritionByDishNameRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GuessNutritionByDishName200Response
+//
+//	@return GuessNutritionByDishName200Response
 func (a *RecipesApiService) GuessNutritionByDishNameExecute(r ApiGuessNutritionByDishNameRequest) (*GuessNutritionByDishName200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GuessNutritionByDishName200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GuessNutritionByDishName200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecipesApiService.GuessNutritionByDishName")
@@ -2610,10 +2630,10 @@ func (a *RecipesApiService) GuessNutritionByDishNameExecute(r ApiGuessNutritionB
 }
 
 type ApiIngredientsByIDImageRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *RecipesApiService
-	id float32
-	measure *string
+	id         float32
+	measure    *string
 }
 
 // Whether the the measures should be &#39;us&#39; or &#39;metric&#39;.
@@ -2631,26 +2651,27 @@ IngredientsByIDImage Ingredients by ID Image
 
 Visualize a recipe's ingredient list.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id The recipe id.
- @return ApiIngredientsByIDImageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id The recipe id.
+	@return ApiIngredientsByIDImageRequest
 */
 func (a *RecipesApiService) IngredientsByIDImage(ctx context.Context, id float32) ApiIngredientsByIDImageRequest {
 	return ApiIngredientsByIDImageRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *RecipesApiService) IngredientsByIDImageExecute(r ApiIngredientsByIDImageRequest) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecipesApiService.IngredientsByIDImage")
@@ -2737,10 +2758,10 @@ func (a *RecipesApiService) IngredientsByIDImageExecute(r ApiIngredientsByIDImag
 }
 
 type ApiParseIngredientsRequest struct {
-	ctx context.Context
-	ApiService *RecipesApiService
+	ctx         context.Context
+	ApiService  *RecipesApiService
 	contentType *string
-	language *string
+	language    *string
 }
 
 // The content type.
@@ -2764,24 +2785,25 @@ ParseIngredients Parse Ingredients
 
 Extract an ingredient from plain text.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiParseIngredientsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiParseIngredientsRequest
 */
 func (a *RecipesApiService) ParseIngredients(ctx context.Context) ApiParseIngredientsRequest {
 	return ApiParseIngredientsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []ParseIngredients200ResponseInner
+//
+//	@return []ParseIngredients200ResponseInner
 func (a *RecipesApiService) ParseIngredientsExecute(r ApiParseIngredientsRequest) ([]ParseIngredients200ResponseInner, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ParseIngredients200ResponseInner
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ParseIngredients200ResponseInner
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecipesApiService.ParseIngredients")
@@ -2870,9 +2892,9 @@ func (a *RecipesApiService) ParseIngredientsExecute(r ApiParseIngredientsRequest
 }
 
 type ApiPriceBreakdownByIDImageRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *RecipesApiService
-	id float32
+	id         float32
 }
 
 func (r ApiPriceBreakdownByIDImageRequest) Execute() (map[string]interface{}, *http.Response, error) {
@@ -2884,26 +2906,27 @@ PriceBreakdownByIDImage Price Breakdown by ID Image
 
 Visualize a recipe's price breakdown.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id The recipe id.
- @return ApiPriceBreakdownByIDImageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id The recipe id.
+	@return ApiPriceBreakdownByIDImageRequest
 */
 func (a *RecipesApiService) PriceBreakdownByIDImage(ctx context.Context, id float32) ApiPriceBreakdownByIDImageRequest {
 	return ApiPriceBreakdownByIDImageRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *RecipesApiService) PriceBreakdownByIDImageExecute(r ApiPriceBreakdownByIDImageRequest) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecipesApiService.PriceBreakdownByIDImage")
@@ -2987,9 +3010,9 @@ func (a *RecipesApiService) PriceBreakdownByIDImageExecute(r ApiPriceBreakdownBy
 }
 
 type ApiQuickAnswerRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *RecipesApiService
-	q *string
+	q          *string
 }
 
 // The nutrition related question.
@@ -3007,24 +3030,25 @@ QuickAnswer Quick Answer
 
 Answer a nutrition related natural language question.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiQuickAnswerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiQuickAnswerRequest
 */
 func (a *RecipesApiService) QuickAnswer(ctx context.Context) ApiQuickAnswerRequest {
 	return ApiQuickAnswerRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return QuickAnswer200Response
+//
+//	@return QuickAnswer200Response
 func (a *RecipesApiService) QuickAnswerExecute(r ApiQuickAnswerRequest) (*QuickAnswer200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *QuickAnswer200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *QuickAnswer200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecipesApiService.QuickAnswer")
@@ -3111,9 +3135,9 @@ func (a *RecipesApiService) QuickAnswerExecute(r ApiQuickAnswerRequest) (*QuickA
 }
 
 type ApiRecipeNutritionByIDImageRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *RecipesApiService
-	id float32
+	id         float32
 }
 
 func (r ApiRecipeNutritionByIDImageRequest) Execute() (map[string]interface{}, *http.Response, error) {
@@ -3125,26 +3149,27 @@ RecipeNutritionByIDImage Recipe Nutrition by ID Image
 
 Visualize a recipe's nutritional information as an image.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id The recipe id.
- @return ApiRecipeNutritionByIDImageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id The recipe id.
+	@return ApiRecipeNutritionByIDImageRequest
 */
 func (a *RecipesApiService) RecipeNutritionByIDImage(ctx context.Context, id float32) ApiRecipeNutritionByIDImageRequest {
 	return ApiRecipeNutritionByIDImageRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *RecipesApiService) RecipeNutritionByIDImageExecute(r ApiRecipeNutritionByIDImageRequest) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecipesApiService.RecipeNutritionByIDImage")
@@ -3228,12 +3253,12 @@ func (a *RecipesApiService) RecipeNutritionByIDImageExecute(r ApiRecipeNutrition
 }
 
 type ApiRecipeNutritionLabelImageRequest struct {
-	ctx context.Context
-	ApiService *RecipesApiService
-	id float32
+	ctx                   context.Context
+	ApiService            *RecipesApiService
+	id                    float32
 	showOptionalNutrients *bool
-	showZeroValues *bool
-	showIngredients *bool
+	showZeroValues        *bool
+	showIngredients       *bool
 }
 
 // Whether to show optional nutrients.
@@ -3263,26 +3288,27 @@ RecipeNutritionLabelImage Recipe Nutrition Label Image
 
 Get a recipe's nutrition label as an image.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id The recipe id.
- @return ApiRecipeNutritionLabelImageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id The recipe id.
+	@return ApiRecipeNutritionLabelImageRequest
 */
 func (a *RecipesApiService) RecipeNutritionLabelImage(ctx context.Context, id float32) ApiRecipeNutritionLabelImageRequest {
 	return ApiRecipeNutritionLabelImageRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *RecipesApiService) RecipeNutritionLabelImageExecute(r ApiRecipeNutritionLabelImageRequest) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecipesApiService.RecipeNutritionLabelImage")
@@ -3375,13 +3401,13 @@ func (a *RecipesApiService) RecipeNutritionLabelImageExecute(r ApiRecipeNutritio
 }
 
 type ApiRecipeNutritionLabelWidgetRequest struct {
-	ctx context.Context
-	ApiService *RecipesApiService
-	id float32
-	defaultCss *bool
+	ctx                   context.Context
+	ApiService            *RecipesApiService
+	id                    float32
+	defaultCss            *bool
 	showOptionalNutrients *bool
-	showZeroValues *bool
-	showIngredients *bool
+	showZeroValues        *bool
+	showIngredients       *bool
 }
 
 // Whether the default CSS should be added to the response.
@@ -3417,26 +3443,27 @@ RecipeNutritionLabelWidget Recipe Nutrition Label Widget
 
 Get a recipe's nutrition label as an HTML widget.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id The recipe id.
- @return ApiRecipeNutritionLabelWidgetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id The recipe id.
+	@return ApiRecipeNutritionLabelWidgetRequest
 */
 func (a *RecipesApiService) RecipeNutritionLabelWidget(ctx context.Context, id float32) ApiRecipeNutritionLabelWidgetRequest {
 	return ApiRecipeNutritionLabelWidgetRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return string
+//
+//	@return string
 func (a *RecipesApiService) RecipeNutritionLabelWidgetExecute(r ApiRecipeNutritionLabelWidgetRequest) (string, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  string
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue string
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecipesApiService.RecipeNutritionLabelWidget")
@@ -3532,11 +3559,11 @@ func (a *RecipesApiService) RecipeNutritionLabelWidgetExecute(r ApiRecipeNutriti
 }
 
 type ApiRecipeTasteByIDImageRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *RecipesApiService
-	id float32
-	normalize *bool
-	rgb *string
+	id         float32
+	normalize  *bool
+	rgb        *string
 }
 
 // Normalize to the strongest taste.
@@ -3560,26 +3587,27 @@ RecipeTasteByIDImage Recipe Taste by ID Image
 
 Get a recipe's taste as an image. The tastes supported are sweet, salty, sour, bitter, savory, and fatty.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id The recipe id.
- @return ApiRecipeTasteByIDImageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id The recipe id.
+	@return ApiRecipeTasteByIDImageRequest
 */
 func (a *RecipesApiService) RecipeTasteByIDImage(ctx context.Context, id float32) ApiRecipeTasteByIDImageRequest {
 	return ApiRecipeTasteByIDImageRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *RecipesApiService) RecipeTasteByIDImageExecute(r ApiRecipeTasteByIDImageRequest) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecipesApiService.RecipeTasteByIDImage")
@@ -3669,104 +3697,104 @@ func (a *RecipesApiService) RecipeTasteByIDImageExecute(r ApiRecipeTasteByIDImag
 }
 
 type ApiSearchRecipesRequest struct {
-	ctx context.Context
-	ApiService *RecipesApiService
-	query *string
-	cuisine *string
-	excludeCuisine *string
-	diet *string
-	intolerances *string
-	equipment *string
-	includeIngredients *string
-	excludeIngredients *string
-	type_ *string
+	ctx                  context.Context
+	ApiService           *RecipesApiService
+	query                *string
+	cuisine              *string
+	excludeCuisine       *string
+	diet                 *string
+	intolerances         *string
+	equipment            *string
+	includeIngredients   *string
+	excludeIngredients   *string
+	type_                *string
 	instructionsRequired *bool
-	fillIngredients *bool
+	fillIngredients      *bool
 	addRecipeInformation *bool
-	addRecipeNutrition *bool
-	author *string
-	tags *string
-	recipeBoxId *float32
-	titleMatch *string
-	maxReadyTime *float32
-	ignorePantry *bool
-	sort *string
-	sortDirection *string
-	minCarbs *float32
-	maxCarbs *float32
-	minProtein *float32
-	maxProtein *float32
-	minCalories *float32
-	maxCalories *float32
-	minFat *float32
-	maxFat *float32
-	minAlcohol *float32
-	maxAlcohol *float32
-	minCaffeine *float32
-	maxCaffeine *float32
-	minCopper *float32
-	maxCopper *float32
-	minCalcium *float32
-	maxCalcium *float32
-	minCholine *float32
-	maxCholine *float32
-	minCholesterol *float32
-	maxCholesterol *float32
-	minFluoride *float32
-	maxFluoride *float32
-	minSaturatedFat *float32
-	maxSaturatedFat *float32
-	minVitaminA *float32
-	maxVitaminA *float32
-	minVitaminC *float32
-	maxVitaminC *float32
-	minVitaminD *float32
-	maxVitaminD *float32
-	minVitaminE *float32
-	maxVitaminE *float32
-	minVitaminK *float32
-	maxVitaminK *float32
-	minVitaminB1 *float32
-	maxVitaminB1 *float32
-	minVitaminB2 *float32
-	maxVitaminB2 *float32
-	minVitaminB5 *float32
-	maxVitaminB5 *float32
-	minVitaminB3 *float32
-	maxVitaminB3 *float32
-	minVitaminB6 *float32
-	maxVitaminB6 *float32
-	minVitaminB12 *float32
-	maxVitaminB12 *float32
-	minFiber *float32
-	maxFiber *float32
-	minFolate *float32
-	maxFolate *float32
-	minFolicAcid *float32
-	maxFolicAcid *float32
-	minIodine *float32
-	maxIodine *float32
-	minIron *float32
-	maxIron *float32
-	minMagnesium *float32
-	maxMagnesium *float32
-	minManganese *float32
-	maxManganese *float32
-	minPhosphorus *float32
-	maxPhosphorus *float32
-	minPotassium *float32
-	maxPotassium *float32
-	minSelenium *float32
-	maxSelenium *float32
-	minSodium *float32
-	maxSodium *float32
-	minSugar *float32
-	maxSugar *float32
-	minZinc *float32
-	maxZinc *float32
-	offset *int32
-	number *int32
-	limitLicense *bool
+	addRecipeNutrition   *bool
+	author               *string
+	tags                 *string
+	recipeBoxId          *float32
+	titleMatch           *string
+	maxReadyTime         *float32
+	ignorePantry         *bool
+	sort                 *string
+	sortDirection        *string
+	minCarbs             *float32
+	maxCarbs             *float32
+	minProtein           *float32
+	maxProtein           *float32
+	minCalories          *float32
+	maxCalories          *float32
+	minFat               *float32
+	maxFat               *float32
+	minAlcohol           *float32
+	maxAlcohol           *float32
+	minCaffeine          *float32
+	maxCaffeine          *float32
+	minCopper            *float32
+	maxCopper            *float32
+	minCalcium           *float32
+	maxCalcium           *float32
+	minCholine           *float32
+	maxCholine           *float32
+	minCholesterol       *float32
+	maxCholesterol       *float32
+	minFluoride          *float32
+	maxFluoride          *float32
+	minSaturatedFat      *float32
+	maxSaturatedFat      *float32
+	minVitaminA          *float32
+	maxVitaminA          *float32
+	minVitaminC          *float32
+	maxVitaminC          *float32
+	minVitaminD          *float32
+	maxVitaminD          *float32
+	minVitaminE          *float32
+	maxVitaminE          *float32
+	minVitaminK          *float32
+	maxVitaminK          *float32
+	minVitaminB1         *float32
+	maxVitaminB1         *float32
+	minVitaminB2         *float32
+	maxVitaminB2         *float32
+	minVitaminB5         *float32
+	maxVitaminB5         *float32
+	minVitaminB3         *float32
+	maxVitaminB3         *float32
+	minVitaminB6         *float32
+	maxVitaminB6         *float32
+	minVitaminB12        *float32
+	maxVitaminB12        *float32
+	minFiber             *float32
+	maxFiber             *float32
+	minFolate            *float32
+	maxFolate            *float32
+	minFolicAcid         *float32
+	maxFolicAcid         *float32
+	minIodine            *float32
+	maxIodine            *float32
+	minIron              *float32
+	maxIron              *float32
+	minMagnesium         *float32
+	maxMagnesium         *float32
+	minManganese         *float32
+	maxManganese         *float32
+	minPhosphorus        *float32
+	maxPhosphorus        *float32
+	minPotassium         *float32
+	maxPotassium         *float32
+	minSelenium          *float32
+	maxSelenium          *float32
+	minSodium            *float32
+	maxSodium            *float32
+	minSugar             *float32
+	maxSugar             *float32
+	minZinc              *float32
+	maxZinc              *float32
+	offset               *int32
+	number               *int32
+	limitLicense         *bool
 }
 
 // The (natural language) search query.
@@ -4354,24 +4382,25 @@ SearchRecipes Search Recipes
 
 Search through hundreds of thousands of recipes using advanced filtering and ranking. NOTE: This method combines searching by query, by ingredients, and by nutrients into one endpoint.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSearchRecipesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSearchRecipesRequest
 */
 func (a *RecipesApiService) SearchRecipes(ctx context.Context) ApiSearchRecipesRequest {
 	return ApiSearchRecipesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SearchRecipes200Response
+//
+//	@return SearchRecipes200Response
 func (a *RecipesApiService) SearchRecipesExecute(r ApiSearchRecipesRequest) (*SearchRecipes200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SearchRecipes200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SearchRecipes200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecipesApiService.SearchRecipes")
@@ -4742,12 +4771,12 @@ func (a *RecipesApiService) SearchRecipesExecute(r ApiSearchRecipesRequest) (*Se
 }
 
 type ApiSearchRecipesByIngredientsRequest struct {
-	ctx context.Context
-	ApiService *RecipesApiService
-	ingredients *string
-	number *int32
+	ctx          context.Context
+	ApiService   *RecipesApiService
+	ingredients  *string
+	number       *int32
 	limitLicense *bool
-	ranking *float32
+	ranking      *float32
 	ignorePantry *bool
 }
 
@@ -4788,28 +4817,27 @@ func (r ApiSearchRecipesByIngredientsRequest) Execute() ([]SearchRecipesByIngred
 /*
 SearchRecipesByIngredients Search Recipes by Ingredients
 
-
 Ever wondered what recipes you can cook with the ingredients you have in your fridge or pantry? This endpoint lets you find recipes that either maximize the usage of ingredients you have at hand (pre shopping) or minimize the ingredients that you don't currently have (post shopping).
-        
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSearchRecipesByIngredientsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSearchRecipesByIngredientsRequest
 */
 func (a *RecipesApiService) SearchRecipesByIngredients(ctx context.Context) ApiSearchRecipesByIngredientsRequest {
 	return ApiSearchRecipesByIngredientsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []SearchRecipesByIngredients200ResponseInner
+//
+//	@return []SearchRecipesByIngredients200ResponseInner
 func (a *RecipesApiService) SearchRecipesByIngredientsExecute(r ApiSearchRecipesByIngredientsRequest) ([]SearchRecipesByIngredients200ResponseInner, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []SearchRecipesByIngredients200ResponseInner
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []SearchRecipesByIngredients200ResponseInner
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecipesApiService.SearchRecipesByIngredients")
@@ -4907,84 +4935,84 @@ func (a *RecipesApiService) SearchRecipesByIngredientsExecute(r ApiSearchRecipes
 }
 
 type ApiSearchRecipesByNutrientsRequest struct {
-	ctx context.Context
-	ApiService *RecipesApiService
-	minCarbs *float32
-	maxCarbs *float32
-	minProtein *float32
-	maxProtein *float32
-	minCalories *float32
-	maxCalories *float32
-	minFat *float32
-	maxFat *float32
-	minAlcohol *float32
-	maxAlcohol *float32
-	minCaffeine *float32
-	maxCaffeine *float32
-	minCopper *float32
-	maxCopper *float32
-	minCalcium *float32
-	maxCalcium *float32
-	minCholine *float32
-	maxCholine *float32
-	minCholesterol *float32
-	maxCholesterol *float32
-	minFluoride *float32
-	maxFluoride *float32
+	ctx             context.Context
+	ApiService      *RecipesApiService
+	minCarbs        *float32
+	maxCarbs        *float32
+	minProtein      *float32
+	maxProtein      *float32
+	minCalories     *float32
+	maxCalories     *float32
+	minFat          *float32
+	maxFat          *float32
+	minAlcohol      *float32
+	maxAlcohol      *float32
+	minCaffeine     *float32
+	maxCaffeine     *float32
+	minCopper       *float32
+	maxCopper       *float32
+	minCalcium      *float32
+	maxCalcium      *float32
+	minCholine      *float32
+	maxCholine      *float32
+	minCholesterol  *float32
+	maxCholesterol  *float32
+	minFluoride     *float32
+	maxFluoride     *float32
 	minSaturatedFat *float32
 	maxSaturatedFat *float32
-	minVitaminA *float32
-	maxVitaminA *float32
-	minVitaminC *float32
-	maxVitaminC *float32
-	minVitaminD *float32
-	maxVitaminD *float32
-	minVitaminE *float32
-	maxVitaminE *float32
-	minVitaminK *float32
-	maxVitaminK *float32
-	minVitaminB1 *float32
-	maxVitaminB1 *float32
-	minVitaminB2 *float32
-	maxVitaminB2 *float32
-	minVitaminB5 *float32
-	maxVitaminB5 *float32
-	minVitaminB3 *float32
-	maxVitaminB3 *float32
-	minVitaminB6 *float32
-	maxVitaminB6 *float32
-	minVitaminB12 *float32
-	maxVitaminB12 *float32
-	minFiber *float32
-	maxFiber *float32
-	minFolate *float32
-	maxFolate *float32
-	minFolicAcid *float32
-	maxFolicAcid *float32
-	minIodine *float32
-	maxIodine *float32
-	minIron *float32
-	maxIron *float32
-	minMagnesium *float32
-	maxMagnesium *float32
-	minManganese *float32
-	maxManganese *float32
-	minPhosphorus *float32
-	maxPhosphorus *float32
-	minPotassium *float32
-	maxPotassium *float32
-	minSelenium *float32
-	maxSelenium *float32
-	minSodium *float32
-	maxSodium *float32
-	minSugar *float32
-	maxSugar *float32
-	minZinc *float32
-	maxZinc *float32
-	offset *int32
-	number *int32
-	random *bool
-	limitLicense *bool
+	minVitaminA     *float32
+	maxVitaminA     *float32
+	minVitaminC     *float32
+	maxVitaminC     *float32
+	minVitaminD     *float32
+	maxVitaminD     *float32
+	minVitaminE     *float32
+	maxVitaminE     *float32
+	minVitaminK     *float32
+	maxVitaminK     *float32
+	minVitaminB1    *float32
+	maxVitaminB1    *float32
+	minVitaminB2    *float32
+	maxVitaminB2    *float32
+	minVitaminB5    *float32
+	maxVitaminB5    *float32
+	minVitaminB3    *float32
+	maxVitaminB3    *float32
+	minVitaminB6    *float32
+	maxVitaminB6    *float32
+	minVitaminB12   *float32
+	maxVitaminB12   *float32
+	minFiber        *float32
+	maxFiber        *float32
+	minFolate       *float32
+	maxFolate       *float32
+	minFolicAcid    *float32
+	maxFolicAcid    *float32
+	minIodine       *float32
+	maxIodine       *float32
+	minIron         *float32
+	maxIron         *float32
+	minMagnesium    *float32
+	maxMagnesium    *float32
+	minManganese    *float32
+	maxManganese    *float32
+	minPhosphorus   *float32
+	maxPhosphorus   *float32
+	minPotassium    *float32
+	maxPotassium    *float32
+	minSelenium     *float32
+	maxSelenium     *float32
+	minSodium       *float32
+	maxSodium       *float32
+	minSugar        *float32
+	maxSugar        *float32
+	minZinc         *float32
+	maxZinc         *float32
+	offset          *int32
+	number          *int32
+	random          *bool
+	limitLicense    *bool
 }
 
 // The minimum amount of carbohydrates in grams the recipe must have.
@@ -5452,24 +5480,25 @@ SearchRecipesByNutrients Search Recipes by Nutrients
 
 Find a set of recipes that adhere to the given nutritional limits. You may set limits for macronutrients (calories, protein, fat, and carbohydrate) and/or many micronutrients.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSearchRecipesByNutrientsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSearchRecipesByNutrientsRequest
 */
 func (a *RecipesApiService) SearchRecipesByNutrients(ctx context.Context) ApiSearchRecipesByNutrientsRequest {
 	return ApiSearchRecipesByNutrientsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []SearchRecipesByNutrients200ResponseInner
+//
+//	@return []SearchRecipesByNutrients200ResponseInner
 func (a *RecipesApiService) SearchRecipesByNutrientsExecute(r ApiSearchRecipesByNutrientsRequest) ([]SearchRecipesByNutrients200ResponseInner, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []SearchRecipesByNutrients200ResponseInner
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []SearchRecipesByNutrients200ResponseInner
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecipesApiService.SearchRecipesByNutrients")
@@ -5780,9 +5809,9 @@ func (a *RecipesApiService) SearchRecipesByNutrientsExecute(r ApiSearchRecipesBy
 }
 
 type ApiSummarizeRecipeRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *RecipesApiService
-	id int32
+	id         int32
 }
 
 func (r ApiSummarizeRecipeRequest) Execute() (*SummarizeRecipe200Response, *http.Response, error) {
@@ -5794,26 +5823,27 @@ SummarizeRecipe Summarize Recipe
 
 Automatically generate a short description that summarizes key information about the recipe.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id The item's id.
- @return ApiSummarizeRecipeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id The item's id.
+	@return ApiSummarizeRecipeRequest
 */
 func (a *RecipesApiService) SummarizeRecipe(ctx context.Context, id int32) ApiSummarizeRecipeRequest {
 	return ApiSummarizeRecipeRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return SummarizeRecipe200Response
+//
+//	@return SummarizeRecipe200Response
 func (a *RecipesApiService) SummarizeRecipeExecute(r ApiSummarizeRecipeRequest) (*SummarizeRecipe200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SummarizeRecipe200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SummarizeRecipe200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecipesApiService.SummarizeRecipe")
@@ -5897,10 +5927,10 @@ func (a *RecipesApiService) SummarizeRecipeExecute(r ApiSummarizeRecipeRequest) 
 }
 
 type ApiVisualizeEquipmentRequest struct {
-	ctx context.Context
-	ApiService *RecipesApiService
+	ctx         context.Context
+	ApiService  *RecipesApiService
 	contentType *string
-	accept *string
+	accept      *string
 }
 
 // The content type.
@@ -5924,24 +5954,25 @@ VisualizeEquipment Equipment Widget
 
 Visualize the equipment used to make a recipe.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiVisualizeEquipmentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVisualizeEquipmentRequest
 */
 func (a *RecipesApiService) VisualizeEquipment(ctx context.Context) ApiVisualizeEquipmentRequest {
 	return ApiVisualizeEquipmentRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return string
+//
+//	@return string
 func (a *RecipesApiService) VisualizeEquipmentExecute(r ApiVisualizeEquipmentRequest) (string, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  string
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue string
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecipesApiService.VisualizeEquipment")
@@ -6030,11 +6061,11 @@ func (a *RecipesApiService) VisualizeEquipmentExecute(r ApiVisualizeEquipmentReq
 }
 
 type ApiVisualizePriceBreakdownRequest struct {
-	ctx context.Context
-	ApiService *RecipesApiService
+	ctx         context.Context
+	ApiService  *RecipesApiService
 	contentType *string
-	accept *string
-	language *string
+	accept      *string
+	language    *string
 }
 
 // The content type.
@@ -6064,24 +6095,25 @@ VisualizePriceBreakdown Price Breakdown Widget
 
 Visualize the price breakdown of a recipe.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiVisualizePriceBreakdownRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVisualizePriceBreakdownRequest
 */
 func (a *RecipesApiService) VisualizePriceBreakdown(ctx context.Context) ApiVisualizePriceBreakdownRequest {
 	return ApiVisualizePriceBreakdownRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return string
+//
+//	@return string
 func (a *RecipesApiService) VisualizePriceBreakdownExecute(r ApiVisualizePriceBreakdownRequest) (string, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  string
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue string
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecipesApiService.VisualizePriceBreakdown")
@@ -6173,9 +6205,9 @@ func (a *RecipesApiService) VisualizePriceBreakdownExecute(r ApiVisualizePriceBr
 }
 
 type ApiVisualizeRecipeEquipmentByIDRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *RecipesApiService
-	id int32
+	id         int32
 	defaultCss *bool
 }
 
@@ -6194,26 +6226,27 @@ VisualizeRecipeEquipmentByID Equipment by ID Widget
 
 Visualize a recipe's equipment list.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id The item's id.
- @return ApiVisualizeRecipeEquipmentByIDRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id The item's id.
+	@return ApiVisualizeRecipeEquipmentByIDRequest
 */
 func (a *RecipesApiService) VisualizeRecipeEquipmentByID(ctx context.Context, id int32) ApiVisualizeRecipeEquipmentByIDRequest {
 	return ApiVisualizeRecipeEquipmentByIDRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return string
+//
+//	@return string
 func (a *RecipesApiService) VisualizeRecipeEquipmentByIDExecute(r ApiVisualizeRecipeEquipmentByIDRequest) (string, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  string
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue string
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecipesApiService.VisualizeRecipeEquipmentByID")
@@ -6300,11 +6333,11 @@ func (a *RecipesApiService) VisualizeRecipeEquipmentByIDExecute(r ApiVisualizeRe
 }
 
 type ApiVisualizeRecipeIngredientsByIDRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *RecipesApiService
-	id int32
+	id         int32
 	defaultCss *bool
-	measure *string
+	measure    *string
 }
 
 // Whether the default CSS should be added to the response.
@@ -6328,26 +6361,27 @@ VisualizeRecipeIngredientsByID Ingredients by ID Widget
 
 Visualize a recipe's ingredient list.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id The item's id.
- @return ApiVisualizeRecipeIngredientsByIDRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id The item's id.
+	@return ApiVisualizeRecipeIngredientsByIDRequest
 */
 func (a *RecipesApiService) VisualizeRecipeIngredientsByID(ctx context.Context, id int32) ApiVisualizeRecipeIngredientsByIDRequest {
 	return ApiVisualizeRecipeIngredientsByIDRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return string
+//
+//	@return string
 func (a *RecipesApiService) VisualizeRecipeIngredientsByIDExecute(r ApiVisualizeRecipeIngredientsByIDRequest) (string, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  string
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue string
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecipesApiService.VisualizeRecipeIngredientsByID")
@@ -6437,11 +6471,11 @@ func (a *RecipesApiService) VisualizeRecipeIngredientsByIDExecute(r ApiVisualize
 }
 
 type ApiVisualizeRecipeNutritionRequest struct {
-	ctx context.Context
-	ApiService *RecipesApiService
+	ctx         context.Context
+	ApiService  *RecipesApiService
 	contentType *string
-	accept *string
-	language *string
+	accept      *string
+	language    *string
 }
 
 // The content type.
@@ -6471,24 +6505,25 @@ VisualizeRecipeNutrition Recipe Nutrition Widget
 
 Visualize a recipe's nutritional information as HTML including CSS.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiVisualizeRecipeNutritionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVisualizeRecipeNutritionRequest
 */
 func (a *RecipesApiService) VisualizeRecipeNutrition(ctx context.Context) ApiVisualizeRecipeNutritionRequest {
 	return ApiVisualizeRecipeNutritionRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return string
+//
+//	@return string
 func (a *RecipesApiService) VisualizeRecipeNutritionExecute(r ApiVisualizeRecipeNutritionRequest) (string, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  string
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue string
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecipesApiService.VisualizeRecipeNutrition")
@@ -6580,11 +6615,11 @@ func (a *RecipesApiService) VisualizeRecipeNutritionExecute(r ApiVisualizeRecipe
 }
 
 type ApiVisualizeRecipeNutritionByIDRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *RecipesApiService
-	id int32
+	id         int32
 	defaultCss *bool
-	accept *string
+	accept     *string
 }
 
 // Whether the default CSS should be added to the response.
@@ -6608,26 +6643,27 @@ VisualizeRecipeNutritionByID Recipe Nutrition by ID Widget
 
 Visualize a recipe's nutritional information as HTML including CSS.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id The item's id.
- @return ApiVisualizeRecipeNutritionByIDRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id The item's id.
+	@return ApiVisualizeRecipeNutritionByIDRequest
 */
 func (a *RecipesApiService) VisualizeRecipeNutritionByID(ctx context.Context, id int32) ApiVisualizeRecipeNutritionByIDRequest {
 	return ApiVisualizeRecipeNutritionByIDRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return string
+//
+//	@return string
 func (a *RecipesApiService) VisualizeRecipeNutritionByIDExecute(r ApiVisualizeRecipeNutritionByIDRequest) (string, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  string
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue string
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecipesApiService.VisualizeRecipeNutritionByID")
@@ -6717,9 +6753,9 @@ func (a *RecipesApiService) VisualizeRecipeNutritionByIDExecute(r ApiVisualizeRe
 }
 
 type ApiVisualizeRecipePriceBreakdownByIDRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *RecipesApiService
-	id int32
+	id         int32
 	defaultCss *bool
 }
 
@@ -6738,26 +6774,27 @@ VisualizeRecipePriceBreakdownByID Price Breakdown by ID Widget
 
 Visualize a recipe's price breakdown.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id The item's id.
- @return ApiVisualizeRecipePriceBreakdownByIDRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id The item's id.
+	@return ApiVisualizeRecipePriceBreakdownByIDRequest
 */
 func (a *RecipesApiService) VisualizeRecipePriceBreakdownByID(ctx context.Context, id int32) ApiVisualizeRecipePriceBreakdownByIDRequest {
 	return ApiVisualizeRecipePriceBreakdownByIDRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return string
+//
+//	@return string
 func (a *RecipesApiService) VisualizeRecipePriceBreakdownByIDExecute(r ApiVisualizeRecipePriceBreakdownByIDRequest) (string, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  string
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue string
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecipesApiService.VisualizeRecipePriceBreakdownByID")
@@ -6844,13 +6881,13 @@ func (a *RecipesApiService) VisualizeRecipePriceBreakdownByIDExecute(r ApiVisual
 }
 
 type ApiVisualizeRecipeTasteRequest struct {
-	ctx context.Context
-	ApiService *RecipesApiService
-	language *string
+	ctx         context.Context
+	ApiService  *RecipesApiService
+	language    *string
 	contentType *string
-	accept *string
-	normalize *bool
-	rgb *string
+	accept      *string
+	normalize   *bool
+	rgb         *string
 }
 
 // The language of the input. Either &#39;en&#39; or &#39;de&#39;.
@@ -6892,24 +6929,25 @@ VisualizeRecipeTaste Recipe Taste Widget
 
 Visualize a recipe's taste information as HTML including CSS. You can play around with that endpoint!
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiVisualizeRecipeTasteRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVisualizeRecipeTasteRequest
 */
 func (a *RecipesApiService) VisualizeRecipeTaste(ctx context.Context) ApiVisualizeRecipeTasteRequest {
 	return ApiVisualizeRecipeTasteRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return string
+//
+//	@return string
 func (a *RecipesApiService) VisualizeRecipeTasteExecute(r ApiVisualizeRecipeTasteRequest) (string, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  string
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue string
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecipesApiService.VisualizeRecipeTaste")
@@ -7007,11 +7045,11 @@ func (a *RecipesApiService) VisualizeRecipeTasteExecute(r ApiVisualizeRecipeTast
 }
 
 type ApiVisualizeRecipeTasteByIDRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *RecipesApiService
-	id int32
-	normalize *bool
-	rgb *string
+	id         int32
+	normalize  *bool
+	rgb        *string
 }
 
 // Whether to normalize to the strongest taste.
@@ -7035,26 +7073,27 @@ VisualizeRecipeTasteByID Recipe Taste by ID Widget
 
 Get a recipe's taste. The tastes supported are sweet, salty, sour, bitter, savory, and fatty.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id The item's id.
- @return ApiVisualizeRecipeTasteByIDRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id The item's id.
+	@return ApiVisualizeRecipeTasteByIDRequest
 */
 func (a *RecipesApiService) VisualizeRecipeTasteByID(ctx context.Context, id int32) ApiVisualizeRecipeTasteByIDRequest {
 	return ApiVisualizeRecipeTasteByIDRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return string
+//
+//	@return string
 func (a *RecipesApiService) VisualizeRecipeTasteByIDExecute(r ApiVisualizeRecipeTasteByIDRequest) (string, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  string
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue string
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecipesApiService.VisualizeRecipeTasteByID")
